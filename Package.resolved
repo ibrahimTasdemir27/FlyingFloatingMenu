@@ -1,5 +1,5 @@
 {
-  "originHash" : "5a71e4343723e2c41949b2fedb6a7cc6a497638bc061e5d46a8d85f20c017e7d",
+  "originHash" : "9c123a49db34301334d08e0911d3eaf2c7ce090840b68e3632938d464bb74736",
   "pins" : [
     {
       "identity" : "snapkit",
@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ibrahimTasdemir27/ViewStyleOptions",
       "state" : {
-        "revision" : "a9e1945235a529f9e08b040501bde699c6f20b1f",
-        "version" : "1.1.9"
+        "revision" : "88375e6f54c97cf173238d00a866c0575a4d52d9",
+        "version" : "2.0.0"
       }
     }
   ],
