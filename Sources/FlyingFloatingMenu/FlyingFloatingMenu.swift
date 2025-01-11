@@ -8,7 +8,7 @@
 import UIKit
 import ViewStyleOptions
 import SnapKit
-
+  
 final public class FlyingFloatingMenu: UIView {
     
     public let topButton = UIButton(
