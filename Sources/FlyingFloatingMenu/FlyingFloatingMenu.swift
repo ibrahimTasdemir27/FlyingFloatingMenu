@@ -11,7 +11,7 @@ import SnapKit
 
 final public class FlyingFloatingMenu: UIView {
     
-    let topButton = UIButton(
+    public let topButton = UIButton(
         configs: .setRadius(25), .setBackground(.systemGray5),
         special: .setImage(.init(systemName: "square.grid.2x2")?.withConfiguration(UIImage.SymbolConfiguration.init(pointSize: 20, weight: .semibold)))
     )
