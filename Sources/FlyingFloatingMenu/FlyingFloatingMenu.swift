@@ -37,12 +37,14 @@ final public class FlyingFloatingMenu: UIView {
     public struct Args {
         let topButtonStyleOptions: (configs: [ViewStyleOptions], special: [ButtonViewStyleOptions])
         let backButtonArgs: [BackButtonArgs]
+        let endDuration: CGFloat
         let onTapButton: (() -> Void)?
         
         public init(topButtonStyleOptions: (configs: [ViewStyleOptions], special: [ButtonViewStyleOptions]) = ([], []),
-             backButtonArgs: [BackButtonArgs], onTapButton: (() -> Void)?) {
+             backButtonArgs: [BackButtonArgs], endDuration: CGFloat, onTapButton: (() -> Void)?) {
             self.topButtonStyleOptions = topButtonStyleOptions
             self.backButtonArgs = backButtonArgs
+            self.endDuration = endDuration
             self.onTapButton = onTapButton
         }
     }
@@ -89,8 +91,8 @@ final public class FlyingFloatingMenu: UIView {
     }
     
     public func setPosition(_ point: CGPoint, end: Bool = false) {
-        self.topButton.center = point
         if (!end) {
+            self.topButton.center = point
             backButtons.enumerated().forEach { index, button in
                 UIView.animate(withDuration: 0.1, delay: Double(index + 1) * 0.1,
                                animations: {
@@ -99,6 +101,12 @@ final public class FlyingFloatingMenu: UIView {
                 )
             }
         } else {
+            UIView.animate(withDuration: args.endDuration, delay: 0,
+                           usingSpringWithDamping: 0.4,initialSpringVelocity: 0, options: .curveEaseInOut,
+                           animations: {
+                                self.topButton.center = point
+                           }
+            )
             backButtons.enumerated().forEach { index, button in
                   UIView.animate(withDuration: 0.1, delay: Double(index + 1) * 0.1,
                                  usingSpringWithDamping: 0.4,initialSpringVelocity: 0, options: .curveEaseInOut,
@@ -146,4 +154,3 @@ private extension FlyingFloatingMenu {
     
     
 }
-
