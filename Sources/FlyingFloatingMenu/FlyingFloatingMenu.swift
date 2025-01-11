@@ -16,7 +16,7 @@ final public class FlyingFloatingMenu: UIView {
         special: .setImage(.init(systemName: "square.grid.2x2")?.withConfiguration(UIImage.SymbolConfiguration.init(pointSize: 20, weight: .semibold)))
     )
     
-    var backButtons: [UIButton] = []
+    public var backButtons: [UIButton] = []
     
     public static let backButtonSymbols: [String] = [
         "magnifyingglass",         // Büyüteç (Arama)
@@ -88,7 +88,7 @@ final public class FlyingFloatingMenu: UIView {
         }
     }
     
-    func setPosition(_ point: CGPoint, end: Bool = false) {
+    public func setPosition(_ point: CGPoint, end: Bool = false) {
         self.topButton.center = point
         if (!end) {
             backButtons.enumerated().forEach { index, button in
