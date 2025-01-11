@@ -18,7 +18,7 @@ final public class FlyingFloatingMenu: UIView {
     
     var backButtons: [UIButton] = []
     
-    static let backButtonSymbols: [String] = [
+    public static let backButtonSymbols: [String] = [
         "magnifyingglass",         // Büyüteç (Arama)
         "star.fill",               // Yıldız (Favori, önemli)
         "house.fill",              // Ev (Ana Sayfa)
@@ -26,7 +26,7 @@ final public class FlyingFloatingMenu: UIView {
         "heart.fill"               // Kalp (Beğenme)
     ]
 
-    static let backButtonBackgrounds: [UIColor] = [
+    static public let backButtonBackgrounds: [UIColor] = [
         .systemBlue,               // Mavi (Arama, etkileyici)
         .systemYellow,             // Sarı (Favori, dikkat çekici)
         .systemGreen,              // Yeşil (Ana sayfa, güven verici)
@@ -39,7 +39,7 @@ final public class FlyingFloatingMenu: UIView {
         let backButtonArgs: [BackButtonArgs]
         let onTapButton: (() -> Void)?
         
-        init(topButtonStyleOptions: (configs: [ViewStyleOptions], special: [ButtonViewStyleOptions]) = ([], []),
+        public init(topButtonStyleOptions: (configs: [ViewStyleOptions], special: [ButtonViewStyleOptions]) = ([], []),
              backButtonArgs: [BackButtonArgs], onTapButton: (() -> Void)?) {
             self.topButtonStyleOptions = topButtonStyleOptions
             self.backButtonArgs = backButtonArgs
@@ -50,7 +50,7 @@ final public class FlyingFloatingMenu: UIView {
     public struct BackButtonArgs {
         let buttonStyleOptions: (configs: [ViewStyleOptions], special: [ButtonViewStyleOptions])
         
-        init(buttonStyleOptions: (configs: [ViewStyleOptions], special: [ButtonViewStyleOptions])) {
+        public init(buttonStyleOptions: (configs: [ViewStyleOptions], special: [ButtonViewStyleOptions])) {
             self.buttonStyleOptions = buttonStyleOptions
         }
     }
